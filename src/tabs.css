@@ -1,0 +1,84 @@
+.tabs {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.tabs input {
+	position: absolute;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.tabs label {
+	cursor: pointer;
+}
+
+.tabs div {
+	position: relative;
+	padding: 10px 10px;
+	font-weight: 700;
+	transition: color .2s;
+}
+
+.tabs div::after {
+	content: "";
+	position: absolute;
+	width: 60%;
+	height: var(--synergy-tab-bar-height);
+	background-color: var(--synergy-border-active);
+	bottom: 0;
+	left: 20%;
+	transition: all .2s;
+	opacity: 0;
+	transform: scaleX(0);
+	border-radius: 10px;
+}
+
+.tabs div::before {
+	z-index: -1;
+	content: "";
+	position: absolute;
+	top: 13%;
+	left: 0;
+	width: 100%;
+	height: 75%;
+	opacity: 0;
+	border-radius: var(--synergy-border-radius);
+	background-color: var(--synergy-tab-highlight);
+	transition: opacity .2s;
+}
+
+.tabs :is(input:focus-visible + div, div:hover)::before {
+	opacity: 1;
+}
+
+.tabs :is(input:checked + div, div:hover) {
+	color: var(--synergy-border-active);
+}
+
+.tabs input:checked + div::after {
+	opacity: 1;
+	transform: none;
+}
+
+.tabs.tabs-no-padding {
+	margin: 0 -10px;
+}
+
+.tabs.tabs-full div {
+	transition: background-color .2s;
+}
+
+.tabs.tabs-full div::after {
+	left: 0;
+	width: 100%;
+	border-radius: 0;
+}
+
+.tabs.tabs-full div::before {
+	display: none;
+}
+
+.tabs.tabs-full :is(input:focus-visible + div, div:hover) {
+	background-color: var(--synergy-tab-highlight);
+}

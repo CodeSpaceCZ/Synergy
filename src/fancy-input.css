@@ -1,0 +1,32 @@
+.inp.inp-fancy label {
+	position: absolute;
+	top: 7px;
+	left: 5px;
+	font-size: 1em;
+	font-weight: 700;
+	transform-origin: 0 0;
+	transform: translate3d(0, 0, 0);
+	transition: all .2s ease;
+	pointer-events: none;
+	background: var(--synergy-bg);
+	padding: 3px 8px;
+	border-radius: 10px;
+	line-height: 1.2em;
+	color: var(--synergy-label);
+	margin: var(--synergy-border-width);
+}
+
+.inp.inp-fancy :is(
+	:is(input, textarea, select):not(:placeholder-shown) + label,
+	:is(input, textarea):not(:-ms-input-placeholder) + label,
+	:is(input, textarea):not(:-moz-placeholder-shown) + label
+),
+.inp.inp-fancy :is(input, textarea):focus + label {
+	color: var(--synergy-label-active);
+	transform: scale(.8);
+	top: -.7em;
+}
+
+.inp.inp-fancy :is(input, textarea, select) {
+	padding: 10px 13px
+}

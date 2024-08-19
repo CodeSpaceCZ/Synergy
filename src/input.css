@@ -1,0 +1,67 @@
+.inp {
+	position: relative;
+	width: 100%;
+}
+
+/* Common styles */
+
+.inp :is(input, textarea, select), .inp:is(input, textarea, select) {
+	display: block;
+	width: 100%;
+	font-family: inherit;
+	padding: 8px 13px;
+	font-size: 1em;
+	font-weight: 500;
+	color: var(--synergy-text-color);
+	transition: border-color 0.15s ease;
+	border-radius: var(--synergy-border-radius);
+	border: var(--synergy-border-width) solid var(--synergy-border);
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
+	background: var(--synergy-bg);
+	margin: 0px;
+}
+
+:is(.inp :is(input, textarea, select), .inp:is(input, textarea, select)):focus {
+	outline: none;
+	border-color: var(--synergy-border-active);
+}
+
+/* Specific styles */
+
+.inp.select select {
+	appearance: none;
+	padding-right: 40px;
+}
+
+.inp.select::before {
+	content: "";
+	border: 1.5px solid var(--synergy-text-color);
+	border-top: 0;
+	border-left: 0;
+	display: block;
+	position: absolute;
+	top: 50%;
+	margin-top: -.42em;
+	right: 15px;
+	padding: 4.5px;
+	transform: rotate(45deg);
+	pointer-events: none;
+}
+
+.inp textarea, textarea.inp {
+	height: 100px;
+	max-width: 100%;
+	resize: vertical;
+}
+
+/* Sizes */
+
+.inp.inp-lg :is(input, textarea, select), :is(input, textarea, select).inp.inp-lg {
+	padding: 10px 16px;
+	font-size: 1.1em;
+}
+
+.inp.inp-sm :is(input, textarea, select), :is(input, textarea, select).inp.inp-sm {
+	padding: 6px 10px;
+	font-size: .9em;
+}
