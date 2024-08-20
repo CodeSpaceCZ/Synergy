@@ -1,0 +1,19 @@
+{
+	"name": "synergy-css",
+	"version": "0.0.1",
+	"description": "Simple framework with CSS-only UI components",
+	"license": "MIT",
+	"author": "CodeSpace.cz",
+	"repository": {
+		"type": "git",
+		"url": "https://git.codespace.cz/CodeSpace/Synergy"
+	},
+	"keywords": [
+		"ui",
+		"css",
+		"components"
+	],
+	"files": [
+		"src/*.css"
+	]
+}
