@@ -1,6 +1,6 @@
 {
 	"name": "synergy-css",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Simple framework with CSS-only UI components",
 	"license": "MIT",
 	"author": "CodeSpace.cz",

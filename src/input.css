@@ -9,7 +9,7 @@
 	display: block;
 	width: 100%;
 	font-family: inherit;
-	padding: 8px 13px;
+	padding: 8px 12px;
 	font-size: 1em;
 	font-weight: 500;
 	color: var(--synergy-text-color);
@@ -57,7 +57,7 @@
 /* Sizes */
 
 .inp.inp-lg :is(input, textarea, select), :is(input, textarea, select).inp.inp-lg {
-	padding: 10px 16px;
+	padding: 10px 14px;
 	font-size: 1.1em;
 }
 

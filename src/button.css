@@ -7,7 +7,7 @@
 
 .btn {
 	background-color: var(--synergy-btn-bg);
-	padding: 8px 15px;
+	padding: 8px 12px;
 	border: 0;
 	color: var(--synergy-text-color);
 	font: inherit;
@@ -53,11 +53,11 @@
 /* Sizes */
 
 .btn.btn-lg {
-	padding: 10px 18px;
+	padding: 10px 16px;
 	font-size: 1.1em;
 }
 
 .btn.btn-sm {
-	padding: 6px 11px;
+	padding: 6px 10px;
 	font-size: .9em;
 }

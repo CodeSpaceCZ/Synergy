@@ -28,5 +28,5 @@
 }
 
 .inp.inp-fancy :is(input, textarea, select) {
-	padding: 10px 13px
+	padding: 10px 12px
 }
