@@ -1,0 +1,47 @@
+/* Pagination */
+
+@layer synergy.components {
+
+	.pagination {
+		display: flex;
+		align-items: center;
+		gap: 4px;
+	}
+
+	.pagination .pages {
+		display: flex;
+		flex: 1;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		gap: 4px;
+	}
+
+	.pagination .btn {
+		flex: none;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: var(--synergy-control-size);
+		height: var(--synergy-control-size);
+		padding: 0;
+		line-height: 1;
+	}
+
+	.pagination .btn .icon {
+		display: flex;
+		font-size: 18px;
+		line-height: 0;
+	}
+
+	.pagination .btn[aria-current="page"] {
+		color: var(--synergy-title);
+		background: var(--synergy-btn-bg-active);
+	}
+
+	.pagination .gap {
+		user-select: none;
+		color: var(--synergy-muted);
+	}
+
+}

@@ -1,0 +1,30 @@
+/* Form layout */
+
+@layer synergy.components {
+
+	.form {
+		display: flex;
+		flex-direction: column;
+		gap: 13px;
+	}
+
+	.form-offset {
+		margin: 20px 0;
+	}
+
+	.form-tab {
+		gap: 11px;
+		padding: 15px;
+		border: 1px solid var(--synergy-tab-highlight);
+		border-radius: var(--synergy-border-radius);
+	}
+
+	.form .row {
+		margin: 7px 0 0;
+	}
+
+	.form > * {
+		margin: 0;
+	}
+
+}
