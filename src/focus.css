@@ -1,0 +1,19 @@
+/* Focus indication */
+
+@layer synergy.base {
+
+	:where(a, button, [role="button"], [role="tab"], [tabindex]) {
+		border-radius: var(--synergy-focus-radius);
+	}
+
+	:where(a, button, [role="button"], [role="tab"], [tabindex]):focus-visible {
+		outline: 2px solid var(--synergy-focus-ring);
+		outline-offset: var(--synergy-focus-offset);
+	}
+
+	:where(input, textarea, select):focus-visible {
+		outline: 2px solid var(--synergy-focus-ring);
+		outline-offset: var(--synergy-focus-offset-input);
+	}
+
+}

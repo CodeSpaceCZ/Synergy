@@ -1,0 +1,41 @@
+/* Tokens */
+
+:root {
+
+	/* Colors */
+	--synergy-accent: #186cd9;
+	--synergy-text-color: #4a5568;
+	--synergy-title: #111;
+	--synergy-muted: #0009;
+	--synergy-bg: #fff;
+	--synergy-label: #4689e1;
+	--synergy-label-active: #186cd9;
+	--synergy-label-error: #e7645a;
+	--synergy-border: #5554;
+	--synergy-border-width: 1px;
+	--synergy-border-error: #be554e;
+	--synergy-tab-highlight: #186cd919;
+	--synergy-tab-bar-height: 2px;
+
+	/* Radius, shadow and control size */
+	--synergy-border-radius: .375rem;
+	--synergy-radius-full: 100px;
+	--synergy-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
+	--synergy-control-size: 34px;
+	--synergy-checkbox-size: calc(1em + 2px);
+
+	/* Focus */
+	--synergy-focus-ring: var(--synergy-accent);
+	--synergy-focus-radius: 5px;
+	--synergy-focus-offset: 2px;
+	--synergy-focus-offset-input: 1px;
+
+	/* Buttons */
+	--synergy-btn-bg: #e2e5e8;
+	--synergy-btn-bg-hover: #d8dce0;
+	--synergy-btn-bg-active: #c5cad0;
+	--synergy-btn-primary-bg: #4689e1;
+	--synergy-btn-primary-bg-hover: #186cd9;
+	--synergy-btn-primary-text-color: #fff;
+
+}

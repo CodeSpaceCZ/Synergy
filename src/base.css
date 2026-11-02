@@ -1,0 +1,16 @@
+/* Base */
+
+@layer synergy.base {
+
+	*,
+	::before,
+	::after {
+		box-sizing: border-box;
+	}
+
+	:is(button, input, textarea, select) {
+		font-family: inherit;
+		font-size: inherit;
+	}
+
+}
