@@ -1,0 +1,68 @@
+/* Buttons */
+
+@layer synergy.components {
+
+	.btn {
+		background-color: var(--synergy-btn-bg);
+		padding: 8px 12px;
+		border: 0;
+		color: var(--synergy-text-color);
+		font-family: inherit;
+		font-size: 1em;
+		font-weight: 700;
+		line-height: 1.25;
+		border-radius: var(--synergy-border-radius);
+		transition: transform .1s;
+		cursor: pointer;
+		text-decoration: none;
+	}
+
+	.btn:hover {
+		background-color: var(--synergy-btn-bg-hover);
+	}
+
+	.btn:active {
+		transform: scale(.97);
+	}
+
+	.btn:focus-visible {
+		outline: 2px solid var(--synergy-focus-ring);
+		outline-offset: var(--synergy-focus-offset);
+		background-color: var(--synergy-btn-bg-hover);
+	}
+
+	.btn:is([disabled], [aria-disabled="true"]) {
+		cursor: not-allowed;
+		opacity: .6;
+	}
+
+	/* Variants */
+
+	.btn-primary {
+		box-shadow: var(--synergy-shadow);
+		--synergy-btn-bg: var(--synergy-btn-primary-bg);
+		--synergy-btn-bg-hover: var(--synergy-btn-primary-bg-hover);
+		--synergy-text-color: var(--synergy-btn-primary-text-color);
+	}
+
+	/* Sizes */
+
+	.btn-lg {
+		padding: 10px 16px;
+		font-size: 1.1em;
+	}
+
+	.btn-sm {
+		padding: 6px 10px;
+		font-size: .9em;
+	}
+
+	/* Rounded - extra side padding, so the pill shape does not crowd the label.
+	   Kept after the sizes, so its inline padding wins over their shorthand. */
+
+	.btn-rounded {
+		border-radius: var(--synergy-radius-full);
+		padding-inline: 18px;
+	}
+
+}

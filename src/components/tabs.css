@@ -1,0 +1,188 @@
+/* Tabs */
+
+@layer synergy.components {
+
+	.tabs {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.tabs input {
+		position: absolute;
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	.tabs > label {
+		display: flex;
+		cursor: pointer;
+	}
+
+	/* Item - wraps the tab title in both the CSS-only and the headless variant */
+
+	.tabs-item {
+		position: relative;
+		isolation: isolate;
+		padding: 7px 10px;
+		font-weight: 700;
+		transition: color .2s;
+	}
+
+	.tabs-item::after {
+		content: "";
+		position: absolute;
+		width: 60%;
+		height: var(--synergy-tab-bar-height);
+		background-color: var(--synergy-accent);
+		bottom: 0;
+		left: 20%;
+		transition: all .2s;
+		opacity: 0;
+		transform: scaleX(0);
+		border-radius: var(--synergy-radius-full);
+	}
+
+	.tabs-item::before {
+		z-index: -1;
+		content: "";
+		position: absolute;
+		top: 13%;
+		left: 0;
+		width: 100%;
+		height: 75%;
+		opacity: 0;
+		border-radius: var(--synergy-border-radius);
+		background-color: var(--synergy-tab-highlight);
+		transition: opacity .2s;
+	}
+
+	.tabs input:focus-visible + .tabs-item {
+		outline: 2px solid var(--synergy-focus-ring);
+		outline-offset: var(--synergy-focus-offset);
+	}
+
+	.tabs :is(input:focus-visible + .tabs-item, .tabs-item:hover)::before {
+		opacity: 1;
+	}
+
+	.tabs :is(input:checked + .tabs-item, .tabs-item:hover) {
+		color: var(--synergy-accent);
+	}
+
+	.tabs input:checked + .tabs-item::after {
+		opacity: 1;
+		transform: none;
+	}
+
+	/* Modifiers */
+
+	.tabs-no-padding {
+		margin: 0 -10px;
+	}
+
+	.tabs-full .tabs-item {
+		transition: background-color .2s;
+	}
+
+	.tabs-full .tabs-item::after {
+		left: 0;
+		width: 100%;
+		border-radius: 0;
+	}
+
+	.tabs-full .tabs-item::before {
+		display: none;
+	}
+
+	.tabs-full :is(input:focus-visible + .tabs-item, .tabs-item:hover) {
+		background-color: var(--synergy-tab-highlight);
+	}
+
+	/* Boxed background - filled tab with rounded top corners */
+
+	.tabs-boxed {
+		gap: 2px;
+	}
+
+	.tabs-boxed .tabs-item {
+		padding: 8px 16px;
+		border-radius: var(--synergy-border-radius) var(--synergy-border-radius) 0 0;
+		transition: color .2s, background-color .2s;
+	}
+
+	.tabs-boxed .tabs-item::before {
+		display: none;
+	}
+
+	.tabs-boxed :is(input:focus-visible + .tabs-item, .tabs-item:hover) {
+		background-color: color-mix(in srgb, var(--synergy-tab-highlight), transparent 55%);
+	}
+
+	.tabs-boxed :is(input:checked + .tabs-item, [data-state="active"] .tabs-item, .tabs-link[aria-current] .tabs-item) {
+		color: var(--synergy-accent);
+		background-color: var(--synergy-tab-highlight);
+	}
+
+	/* Indicator: seam - rounded top corners, merged with the bottom border */
+
+	.tabs-seam .tabs-item::after {
+		height: calc(var(--synergy-tab-bar-height) + 1px);
+		bottom: 0;
+		border-radius: var(--synergy-border-radius) var(--synergy-border-radius) 0 0;
+	}
+
+	.tabs-seam.tabs-border .tabs-item::after {
+		bottom: -1px;
+	}
+
+	/* Optional bottom border, the seam indicator merges with it */
+
+	.tabs-border {
+		border-bottom: 1px solid var(--synergy-border);
+	}
+
+	/* Headless variant */
+
+	.tabs-list {
+		display: flex;
+		flex-wrap: wrap;
+		position: relative;
+	}
+
+	.tabs-trigger,
+	.tabs-link {
+		appearance: none;
+		display: flex;
+		background: none;
+		border: 0;
+		margin: 0;
+		padding: 0;
+		font-family: inherit;
+		font-size: inherit;
+		color: inherit;
+		cursor: pointer;
+	}
+
+	/* Focus rings for triggers and links come from focus.css */
+
+	.tabs-trigger:is([disabled], [aria-disabled="true"]) {
+		cursor: not-allowed;
+	}
+
+	.tabs-trigger:is([disabled], [aria-disabled="true"]) .tabs-item {
+		cursor: not-allowed;
+		opacity: .5;
+	}
+
+	.tabs [data-state="active"] .tabs-item,
+	.tabs-link[aria-current] .tabs-item {
+		color: var(--synergy-accent);
+	}
+
+	.tabs [data-state="active"] .tabs-item::after,
+	.tabs-link[aria-current] .tabs-item::after {
+		opacity: 1;
+		transform: none;
+	}
+
+}

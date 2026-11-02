@@ -1,0 +1,110 @@
+/* Inputs */
+
+@layer synergy.components {
+
+	.input {
+		position: relative;
+		width: 100%;
+	}
+
+	/* Common styles */
+
+	.input :is(input, textarea, select),
+	.input > button,
+	.input:is(input, textarea, select) {
+		display: block;
+		width: 100%;
+		font-family: inherit;
+		padding: 8px 12px;
+		font-size: 1em;
+		font-weight: 500;
+		color: var(--synergy-text-color);
+		transition: border-color .15s ease;
+		border-radius: var(--synergy-border-radius);
+		border: var(--synergy-border-width) solid var(--synergy-border);
+		box-shadow: var(--synergy-shadow);
+		background: var(--synergy-bg);
+		margin: 0;
+	}
+
+	:is(.input :is(input, textarea, select), .input:is(input, textarea, select)):focus {
+		outline: none;
+		border-color: var(--synergy-accent);
+	}
+
+	/* Picker button */
+
+	.input > button {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 8px;
+		text-align: left;
+		cursor: pointer;
+		appearance: none;
+	}
+
+	.input > button:focus-visible {
+		border-color: var(--synergy-accent);
+	}
+
+	.input > button:is([disabled], [aria-disabled="true"]) {
+		cursor: not-allowed;
+		opacity: .6;
+	}
+
+	/* Error state */
+
+	.input-error :is(input, textarea, select),
+	.input :is(input, textarea, select)[aria-invalid="true"] {
+		border-color: var(--synergy-border-error);
+	}
+
+	/* Specific styles */
+
+	.input-select select {
+		appearance: none;
+		padding-right: 40px;
+	}
+
+	.input-select::before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		right: 16px;
+		width: .4em;
+		height: .4em;
+		border: solid var(--synergy-muted);
+		border-width: 0 1.5px 1.5px 0;
+		border-radius: 1px;
+		transform: translateY(-62%) rotate(45deg);
+		pointer-events: none;
+		transition: border-color .15s;
+	}
+
+	.input-select:focus-within::before {
+		border-color: var(--synergy-accent);
+	}
+
+	.input textarea,
+	textarea.input {
+		height: 100px;
+		max-width: 100%;
+		resize: vertical;
+	}
+
+	/* Sizes */
+
+	.input-lg :is(input, textarea, select),
+	:is(input, textarea, select).input-lg {
+		padding: 10px 14px;
+		font-size: 1.1em;
+	}
+
+	.input-sm :is(input, textarea, select),
+	:is(input, textarea, select).input-sm {
+		padding: 6px 10px;
+		font-size: .9em;
+	}
+
+}

@@ -1,0 +1,82 @@
+/* Toggle */
+
+@layer synergy.components {
+
+	.toggle {
+		--toggle-pad: 3px;
+		--toggle-knob: calc(1.5em - 8px);
+		position: relative;
+		display: block;
+		width: 100%;
+		max-width: 2.6em;
+		height: 1.5em;
+		padding: var(--toggle-pad);
+		border: var(--synergy-border-width) solid var(--synergy-border);
+		border-radius: var(--synergy-radius-full);
+		background-color: var(--synergy-bg);
+		box-shadow: var(--synergy-shadow);
+		cursor: pointer;
+		transition: background-color .2s, border-color .2s;
+	}
+
+	.toggle:has(input:checked) {
+		background-color: var(--synergy-accent);
+		border-color: var(--synergy-accent);
+	}
+
+	.toggle:has(input:focus-visible) {
+		outline: 2px solid var(--synergy-focus-ring);
+		outline-offset: var(--synergy-focus-offset);
+	}
+
+	.toggle input {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		opacity: 0;
+		cursor: pointer;
+		z-index: 100;
+	}
+
+	/* Switch knob */
+
+	.toggle::after {
+		content: "";
+		position: absolute;
+		top: var(--toggle-pad);
+		left: var(--toggle-pad);
+		width: var(--toggle-knob);
+		height: var(--toggle-knob);
+		border-radius: var(--synergy-radius-full);
+		background-color: var(--synergy-border);
+		transition: left .2s, background-color .2s;
+	}
+
+	.toggle:has(input:checked)::after {
+		left: calc(100% - var(--toggle-knob) - var(--toggle-pad));
+		background-color: var(--synergy-bg);
+	}
+
+	/* Toggle row - a toggle next to its label, in either order */
+
+	.toggle-row {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+	}
+
+	.toggle-row label {
+		cursor: pointer;
+	}
+
+	.toggle-row .toggle {
+		margin-left: auto;
+	}
+
+	.toggle-row .toggle:first-child {
+		margin-left: 0;
+	}
+
+}
