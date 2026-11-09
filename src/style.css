@@ -1,6 +1,15 @@
-@import url("./button.css");
-@import url("./input.css");
-@import url("./fancy-input.css");
-@import url("./toggle.css");
-@import url("./checkbox.css");
-@import url("./tabs.css");
+@layer synergy.tokens, synergy.base, synergy.components, synergy.utilities;
+
+@import url("./tokens.css");
+@import url("./base.css");
+@import url("./focus.css");
+@import url("./layout.css");
+@import url("./utils.css");
+@import url("./components/button.css");
+@import url("./components/input.css");
+@import url("./components/field.css");
+@import url("./components/form.css");
+@import url("./components/checkbox.css");
+@import url("./components/toggle.css");
+@import url("./components/tabs.css");
+@import url("./components/pagination.css");
